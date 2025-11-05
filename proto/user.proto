@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package user;
+option go_package = "github.com/yourusername/grpc-protos/user;user";
+
+service UserService {
+  rpc GetUserByID (GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserResponse {
+  string user_id = 1;
+  string name = 2;
+  string email = 3;
+}
